@@ -224,7 +224,14 @@ def make_pdf(title, body):
 
     pdf.multi_cell(0, 6, sanitize(body))
 
-    return pdf.output(dest="S").encode("latin-1", "replace")
+    result = pdf.output(dest="S")
+
+    # CRITICAL FIX:
+    if isinstance(result, bytes):
+        return result
+    else:
+        return result.encode("latin-1", "replace")
+
 
 
 # =========================
