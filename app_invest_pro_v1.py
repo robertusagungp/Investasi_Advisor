@@ -226,9 +226,9 @@ def make_pdf(title, body):
 
     result = pdf.output(dest="S")
 
-    # CRITICAL FIX:
-    if isinstance(result, bytes):
-        return result
+    # UNIVERSAL FIX (handles str, bytes, bytearray)
+    if isinstance(result, (bytes, bytearray)):
+        return bytes(result)
     else:
         return result.encode("latin-1", "replace")
 
