@@ -46,7 +46,7 @@ with st.expander(T("⚠️ Disclaimer", "⚠️ Disclaimer"), expanded=True):
 st.sidebar.header(T("Pengaturan AI", "AI Settings"))
 
 DEFAULT_MODEL_OLLAMA = "llama3"
-DEFAULT_MODEL_GROQ = "llama3-70b-8192"
+DEFAULT_MODEL_GROQ = "llama-3.1-70b-versatile"
 
 temperature = st.sidebar.slider(T("Kreativitas (temperature)", "Creativity (temperature)"), 0.0, 1.0, 0.35, 0.05)
 
